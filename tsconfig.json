@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "noImplicitAny": false,
+        "out": "build/fn.tsc.js",
+        "sourceMap": false
+    },
+    "files": [
+        "src/fn.ts"
+    ]
+}

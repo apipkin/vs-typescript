@@ -1,0 +1,27 @@
+{
+  "name": "vs-traceur",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run transpile && npm run uglify",
+    "transpile": "npm run transpile:babel && npm run transpile:typescript",
+    "transpile:babel": "babel src/fn.js --out-file build/fn.babel.js",
+    "transpile:typescript": "tsc --allowJs  --out build/fn.typescript.js src/fn.js",
+    "tsc": "tsc",
+    "uglify": "npm run uglify:babel && npm run uglify:typescript",
+    "uglify:babel": "uglifyjs build/fn.babel.js -c -o build/fn.babel.min.js",
+    "uglify:typescript": "uglifyjs build/fn.typescript.js -c -o build/fn.typescript.min.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.6.4",
+    "babel-preset-es2015": "^6.6.0",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.1.0",
+    "uglify-js": "^2.6.2"
+  }
+}
